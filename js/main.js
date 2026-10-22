@@ -36,10 +36,10 @@ list.addEventListener("click", e => {
 });
 
 document.getElementById("share").addEventListener("click", async () => {
-  let link = "";
-  try { link = location.href.split("#")[0]; } catch (e) {}
+  const link = location.href.split("#")[0];
   const toast = document.getElementById("toast");
-  try { if (navigator.share) { await navigator.share({ text: SHARE_TEXT, url: link || undefined }); return; } } catch (e) {}
-  try { await navigator.clipboard.writeText(link ? SHARE_TEXT + " " + link : SHARE_TEXT); toast.textContent = "Copiado. Cole onde quiser."; }
-  catch (e) { toast.textContent = "Não foi possível copiar. Compartilhe: " + SHARE_TEXT; }
+  const touch = matchMedia("(pointer: coarse)").matches;
+  try { if (touch && navigator.share) { await navigator.share({ title: document.title, url: link }); return; } } catch (e) { if (e && e.name === "AbortError") return; }
+  try { await navigator.clipboard.writeText(link); toast.textContent = "Link copiado. Cole onde quiser."; }
+  catch (e) { toast.textContent = "Não foi possível copiar. O link é: " + link; }
 });

@@ -46,7 +46,7 @@ h1 {
 }
 .term {
   display: block; font-family: var(--serif);
-  font-size: clamp(1.9rem, 8vw, 3rem); line-height: 1.08; letter-spacing: -0.015em;
+  font-size: clamp(1.35rem, 5.5vw, 1.9rem); line-height: 1.15; letter-spacing: -0.015em;
   overflow-wrap: anywhere;
 }
 .tease, .via, .seen { display: block; margin-top: 8px; color: var(--muted); font-size: 0.95rem; }
@@ -56,9 +56,10 @@ h1 {
   text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 8px;
 }
 
-/* the highlighted term: larger, brighter rule, same palette */
+/* the highlighted term: much larger, italic, brighter rule; the rest stay small */
 .list li.featured { border-top: 1px solid var(--ink); }
-.featured .term { font-size: clamp(2.3rem, 10vw, 3.9rem); }
+.featured .term { font-size: clamp(2.6rem, 12vw, 4.6rem); line-height: 1.02; font-style: italic; letter-spacing: -0.025em; }
+.featured .item { padding: clamp(32px, 7vw, 52px) 0; }
 .featured .tease { color: var(--ink); }
 
 .item.opened .term { color: var(--muted); }
