@@ -11,13 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1CWKGBVPW7"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-1CWKGBVPW7');
-</script>
+
 </head>
 <body>
 <div class="wrap">
@@ -32,7 +26,15 @@ gtag('config', 'G-1CWKGBVPW7');
       <button class="link" id="share">Mande para alguém curioso</button>
     </div>
     <p class="toast" id="toast" aria-live="polite"></p>
+    <button class="link small" id="prefs" hidden>Preferências de cookies</button>
   </main>
+</div>
+<div class="consent" id="consent" role="dialog" aria-labelledby="consent-t" hidden>
+  <p id="consent-t">Usamos o Google Analytics, com cookies, para entender quais termos despertam curiosidade. Pode recusar sem perder nada.</p>
+  <div class="consent-btns">
+    <button class="btn" id="deny">Recusar</button>
+    <button class="btn" id="allow">Aceitar</button>
+  </div>
 </div>
 <script src="js/terms.js"></script>
 <script src="js/main.js"></script>
