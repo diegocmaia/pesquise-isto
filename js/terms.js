@@ -5,7 +5,7 @@
    featured: true para destacar o termo
 ---------------------------------------------------------------- */
 const TERMS = [
-  { q: "bolsonaro tavane albuquerquer",  tease: "Comece por aqui.", featured: true },
+  { q: "bolsonaro talvane albuquerquer",  tease: "Comece por aqui.", featured: true },
   { q: "flavio esquema pandemia",        tease: "Veja o que aparece." },
   { q: "flavio ilha richarlison",        tease: "Há mais de uma versão." },
   { q: "bolsonaro mandou matar lula?",   tease: "Leia o que consta no processo e o que a defesa diz." }
