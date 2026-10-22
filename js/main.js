@@ -30,6 +30,7 @@ updateCount();
 list.addEventListener("click", e => {
   const a = e.target.closest("a[data-q]");
   if (!a) return;
+  if (window.gtag) gtag("event", "term_click", { term: a.dataset.q });
   opened[a.dataset.q] = true; save();
   a.classList.add("opened");
   updateCount();
@@ -38,6 +39,7 @@ list.addEventListener("click", e => {
 document.getElementById("share").addEventListener("click", async () => {
   const link = location.href.split("#")[0];
   const toast = document.getElementById("toast");
+  if (window.gtag) gtag("event", "share");
   const touch = matchMedia("(pointer: coarse)").matches;
   try { if (touch && navigator.share) { await navigator.share({ title: document.title, url: link }); return; } } catch (e) { if (e && e.name === "AbortError") return; }
   try { await navigator.clipboard.writeText(link); toast.textContent = "Link copiado. Cole onde quiser."; }
